@@ -6,24 +6,29 @@ using System.Threading.Tasks;
 
 namespace Sortieralgorithmen
 {
-    public class QuickSort
+    /// <summary>
+    /// Implements the Quick Sort algorithm for integer arrays.
+    /// </summary>
+    public class QuickSort : SortingAlgorithm
     {
+        public override string Name => "Quick Sort";
+
         /// <summary>
-        /// Sorts an array of integers in ascending order using the Quick Sort algorithm.
+        /// Sorts an array of integers in ascending order using Quick Sort.
         /// </summary>
         /// <param name="array">The array to be sorted.</param>
-        public static void Sort(int[] array)
+        public override void Sort(int[] array)
         {
             Sort(array, 0, array.Length - 1);
         }
 
         /// <summary>
-        /// Recursively sorts a subarray using Quick Sort.
+        /// Recursively sorts a subarray using Quick Sort logic.
         /// </summary>
         /// <param name="array">Array to sort.</param>
         /// <param name="start">Starting index of the subarray.</param>
         /// <param name="end">Ending index of the subarray.</param>
-        private static void Sort(int[] array, int start, int end)
+        private void Sort(int[] array, int start, int end)
         {
             if (end <= start) return;
 
@@ -41,7 +46,7 @@ namespace Sortieralgorithmen
         /// <param name="start">Starting index of the partition.</param>
         /// <param name="end">Ending index of the partition.</param>
         /// <returns>Final index of the pivot element.</returns>
-        private static int Partition(int[] array, int start, int end)
+        private int Partition(int[] array, int start, int end)
         {
             int pivot = array[end];
             int i = start - 1;

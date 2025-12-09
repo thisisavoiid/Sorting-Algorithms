@@ -6,13 +6,21 @@ using System.Threading.Tasks;
 
 namespace Sortieralgorithmen
 {
-    public class MergeSort
+    /// <summary>
+    /// Implements the Merge Sort algorithm for integer arrays.
+    /// </summary>
+    public class MergeSort : SortingAlgorithm
     {
+        /// <summary>
+        /// Gets the name of the sorting algorithm.
+        /// </summary>
+        public override string Name => "Merge Sort";
+
         /// <summary>
         /// Sorts an array of integers in ascending order using the Merge Sort algorithm.
         /// </summary>
         /// <param name="array">The array to be sorted.</param>
-        public static void Sort(int[] array)
+        public override void Sort(int[] array)
         {
             int length = array.Length;
 
@@ -54,7 +62,7 @@ namespace Sortieralgorithmen
         /// <param name="leftArray">The left sorted array.</param>
         /// <param name="rightArray">The right sorted array.</param>
         /// <param name="array">The original array to store merged results.</param>
-        private static void Merge(int[] leftArray, int[] rightArray, int[] array)
+        private void Merge(int[] leftArray, int[] rightArray, int[] array)
         {
             int leftSize = array.Length / 2;
             int rightSize = array.Length - leftSize;

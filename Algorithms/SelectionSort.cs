@@ -6,15 +6,24 @@ using System.Threading.Tasks;
 
 namespace Sortieralgorithmen
 {
-    public class SelectionSort
+    /// <summary>
+    /// Implements the Selection Sort algorithm for integer arrays.
+    /// </summary>
+    public class SelectionSort : SortingAlgorithm
     {
         /// <summary>
-        /// Sorts an array of integers in ascending order using the Selection Sort algorithm.
+        /// Gets the name of the sorting algorithm.
+        /// </summary>
+        public override string Name => "Selection Sort";
+
+        /// <summary>
+        /// Sorts an array of integers in ascending order using Selection Sort.
         /// </summary>
         /// <param name="array">The array to be sorted.</param>
-        public static void Sort(int[] array)
+        public override void Sort(int[] array)
         {
             int minIndex;
+
             for (int i = 0; i < array.Length; i++)
             {
                 // Assume the current position holds the minimum value
@@ -24,9 +33,7 @@ namespace Sortieralgorithmen
                 for (int j = i + 1; j < array.Length; j++)
                 {
                     if (array[j] < array[minIndex])
-                    {
                         minIndex = j;
-                    }
                 }
 
                 // Swap the found minimum element with the element at the current position
